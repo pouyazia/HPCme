@@ -1,0 +1,177 @@
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+   Installed Parsers ───────── v2.8.1
+   Installed BenchmarkTools ── v1.5.0
+   Installed JSON ──────────── v0.21.4
+   Installed Preferences ───── v1.4.2
+   Installed PrecompileTools ─ v1.2.0
+    Updating `~/.julia/environments/v1.9/Project.toml`
+  [6e4b80f9] + BenchmarkTools v1.5.0
+    Updating `~/.julia/environments/v1.9/Manifest.toml`
+  [6e4b80f9] + BenchmarkTools v1.5.0
+  [682c06a0] + JSON v0.21.4
+  [69de0a69] + Parsers v2.8.1
+  [aea7be01] + PrecompileTools v1.2.0
+  [21216c6a] + Preferences v1.4.2
+  [0dad84c5] + ArgTools v1.1.1
+  [56f22d72] + Artifacts
+  [2a0f44e3] + Base64
+  [ade2ca70] + Dates
+  [f43a241f] + Downloads v1.6.0
+  [7b1f6079] + FileWatching
+  [b77e0a4c] + InteractiveUtils
+  [b27032c2] + LibCURL v0.6.4
+  [76f85450] + LibGit2
+  [8f399da3] + Libdl
+  [37e2e46d] + LinearAlgebra
+  [56ddb016] + Logging
+  [d6f4376e] + Markdown
+  [a63ad114] + Mmap
+  [ca575930] + NetworkOptions v1.2.0
+  [44cfe95a] + Pkg v1.9.2
+  [de0858da] + Printf
+  [9abbd945] + Profile
+  [3fa0cd96] + REPL
+  [9a3f8284] + Random
+  [ea8e919c] + SHA v0.7.0
+  [9e88b42a] + Serialization
+  [6462fe0b] + Sockets
+  [2f01184e] + SparseArrays
+  [10745b16] + Statistics v1.9.0
+  [fa267f1f] + TOML v1.0.3
+  [a4e569a6] + Tar v1.10.0
+  [cf7118a7] + UUIDs
+  [4ec0a83e] + Unicode
+  [e66e0078] + CompilerSupportLibraries_jll v1.0.5+0
+  [deac9b47] + LibCURL_jll v8.4.0+0
+  [29816b5a] + LibSSH2_jll v1.11.0+1
+  [c8ffd9c3] + MbedTLS_jll v2.28.2+0
+  [14a3606d] + MozillaCACerts_jll v2022.10.11
+  [4536629a] + OpenBLAS_jll v0.3.21+4
+  [bea87d4a] + SuiteSparse_jll v5.10.1+6
+  [83775a58] + Zlib_jll v1.2.13+0
+  [8e850b90] + libblastrampoline_jll v5.8.0+0
+  [8e850ede] + nghttp2_jll v1.52.0+1
+  [3f19e933] + p7zip_jll v17.4.0+0
+Precompiling project...
+[32m  ✓ [39m[90mPreferences[39m
+[32m  ✓ [39m[90mPrecompileTools[39m
+[32m  ✓ [39m[90mParsers[39m
+[32m  ✓ [39m[90mJSON[39m
+[32m  ✓ [39mBenchmarkTools
+  5 dependencies successfully precompiled in 48 seconds. 6 already precompiled.
+ERROR: LoadError: MethodError: Cannot `convert` an object of type 
+  MersenneTwister to an object of type 
+  AbstractChannel
+
+Closest candidates are:
+  convert(::Type{T}, !Matched::T) where T
+   @ Base Base.jl:64
+
+Stacktrace:
+  [1] Distributed.RemoteValue(c::MersenneTwister)
+    @ Distributed /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/process_messages.jl:27
+  [2] (::Distributed.var"#129#130"{Distributed.ProcessGroup, Distributed.RRID, var"#3#5"})()
+    @ Distributed /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:188
+  [3] lock(f::Distributed.var"#129#130"{Distributed.ProcessGroup, Distributed.RRID, var"#3#5"}, l::ReentrantLock)
+    @ Base ./lock.jl:229
+  [4] lock(f::Function, wkh::WeakKeyDict{Distributed.AbstractRemoteRef, Nothing})
+    @ Base ./weakkeydict.jl:89
+  [5] lookup_ref
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:184 [inlined]
+  [6] lookup_ref
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:182 [inlined]
+  [7] (::Distributed.var"#125#126")(f::Function, rrid::Distributed.RRID)
+    @ Distributed /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:132
+  [8] #invokelatest#2
+    @ ./essentials.jl:819 [inlined]
+  [9] invokelatest
+    @ ./essentials.jl:816 [inlined]
+ [10] #153
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:425 [inlined]
+ [11] run_work_thunk(thunk::Distributed.var"#153#154"{Distributed.var"#125#126", Tuple{var"#3#5", Distributed.RRID}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}}, print_error::Bool)
+    @ Distributed /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/process_messages.jl:70
+ [12] #remotecall_fetch#158
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:450 [inlined]
+ [13] remotecall_fetch
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:449 [inlined]
+ [14] #remotecall_fetch#162
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:492 [inlined]
+ [15] remotecall_fetch
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:492 [inlined]
+ [16] RemoteChannel (repeats 2 times)
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:131 [inlined]
+ [17] sample_M_distributed(N::Int64)
+    @ Main /data/slurm-docker-cluster/HPCme/main.jl:10
+ [18] estimate_pi_distributed(N::Int64)
+    @ Main /data/slurm-docker-cluster/HPCme/main.jl:22
+ [19] var"##core#297"()
+    @ Main ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:561
+ [20] var"##sample#298"(::Tuple{}, __params::BenchmarkTools.Parameters)
+    @ Main ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:570
+ [21] _lineartrial(b::BenchmarkTools.Benchmark, p::BenchmarkTools.Parameters; maxevals::Int64, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:187
+ [22] _lineartrial(b::BenchmarkTools.Benchmark, p::BenchmarkTools.Parameters)
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:182
+ [23] #invokelatest#2
+    @ ./essentials.jl:819 [inlined]
+ [24] invokelatest
+    @ ./essentials.jl:816 [inlined]
+ [25] #lineartrial#46
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:51 [inlined]
+ [26] lineartrial
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:50 [inlined]
+ [27] tune!(b::BenchmarkTools.Benchmark, p::BenchmarkTools.Parameters; progressid::Nothing, nleaves::Float64, ndone::Float64, verbose::Bool, pad::String, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:300
+ [28] tune!
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:289 [inlined]
+ [29] tune!(b::BenchmarkTools.Benchmark)
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:289
+ [30] top-level scope
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:666
+ [31] include(mod::Module, _path::String)
+    @ Base ./Base.jl:457
+ [32] exec_options(opts::Base.JLOptions)
+    @ Base ./client.jl:307
+ [33] _start()
+    @ Base ./client.jl:522
+Stacktrace:
+  [1] #remotecall_fetch#158
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:451 [inlined]
+  [2] remotecall_fetch
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:449 [inlined]
+  [3] #remotecall_fetch#162
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:492 [inlined]
+  [4] remotecall_fetch
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:492 [inlined]
+  [5] RemoteChannel (repeats 2 times)
+    @ /opt/x86/julia/julia-1.9.4/share/julia/stdlib/v1.9/Distributed/src/remotecall.jl:131 [inlined]
+  [6] sample_M_distributed(N::Int64)
+    @ Main /data/slurm-docker-cluster/HPCme/main.jl:10
+  [7] estimate_pi_distributed(N::Int64)
+    @ Main /data/slurm-docker-cluster/HPCme/main.jl:22
+  [8] var"##core#297"()
+    @ Main ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:561
+  [9] var"##sample#298"(::Tuple{}, __params::BenchmarkTools.Parameters)
+    @ Main ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:570
+ [10] _lineartrial(b::BenchmarkTools.Benchmark, p::BenchmarkTools.Parameters; maxevals::Int64, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:187
+ [11] _lineartrial(b::BenchmarkTools.Benchmark, p::BenchmarkTools.Parameters)
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:182
+ [12] #invokelatest#2
+    @ ./essentials.jl:819 [inlined]
+ [13] invokelatest
+    @ ./essentials.jl:816 [inlined]
+ [14] #lineartrial#46
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:51 [inlined]
+ [15] lineartrial
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:50 [inlined]
+ [16] tune!(b::BenchmarkTools.Benchmark, p::BenchmarkTools.Parameters; progressid::Nothing, nleaves::Float64, ndone::Float64, verbose::Bool, pad::String, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}})
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:300
+ [17] tune!
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:289 [inlined]
+ [18] tune!(b::BenchmarkTools.Benchmark)
+    @ BenchmarkTools ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:289
+ [19] top-level scope
+    @ ~/.julia/packages/BenchmarkTools/QNsku/src/execution.jl:666
+in expression starting at /data/slurm-docker-cluster/HPCme/main.jl:29

@@ -1,0 +1,3 @@
+/var/spool/slurmd/job00026/slurm_script: line 7: using: command not found
+/var/spool/slurmd/job00026/slurm_script: line 8: syntax error near unexpected token `"BenchmarkTools"'
+/var/spool/slurmd/job00026/slurm_script: line 8: `Pkg.add("BenchmarkTools")'
